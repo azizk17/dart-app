@@ -24,21 +24,16 @@ abstract class User extends Model implements Built<User, UserBuilder> {
 
   User._();
   factory User([updates(UserBuilder b)]) = _$User;
-}
 
-/*
- *  * Firebase parasing
- *  
- */
+  factory User.parseFirebase(dynamic doc) {
+    User docWithoutDocumentID =
+        standardSerializers.deserializeWith<User>(User.serializer, doc.data);
+    //As the document ID is not in the Map, but an attribute of the Document I'll have to add it manually. Any way to fix this?
+    var dockWithDocID =
+        docWithoutDocumentID.rebuild((b) => b..id = doc.documentID);
 
-User parseUser(dynamic doc) {
-  User docWithoutDocumentID =
-      standardSerializers.deserializeWith<User>(User.serializer, doc.data);
-  //As the document ID is not in the Map, but an attribute of the Document I'll have to add it manually. Any way to fix this?
-  var dockWithDocID =
-      docWithoutDocumentID.rebuild((b) => b..id = doc.documentID);
+    assert(dockWithDocID.id != null);
 
-  assert(dockWithDocID.id != null);
-
-  return dockWithDocID;
+    return dockWithDocID;
+  }
 }

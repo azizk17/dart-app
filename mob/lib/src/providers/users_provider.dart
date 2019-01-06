@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:common/common.dart' show UsersBloc;
+import 'package:common/common.dart' show UsersBloc, DB, Service;
 import '../services/firebase/users_firebase.dart';
+import '../db/index.dart' show UsersDB;
 // export 'stories_bloc.dart';
 
 class UsersProvider extends InheritedWidget {
   final UsersBloc bloc;
   // static UsersFirebase service = UsersFirebase();
-  final SettingsBloc bloc;
   static Service _service = UsersFirebase();
-  static DB _db = SettingsDB();
+  static DB _db = UsersDB();
 
   UsersProvider({Key key, Widget child})
       : bloc = UsersBloc(_service, _db),

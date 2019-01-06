@@ -1,1 +1,1 @@
-abstract class Repository<Model> {}
+abstract class Repository {}

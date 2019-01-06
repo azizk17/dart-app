@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import './src/routes.dart';
 import './src/locale.dart';
 import './src/themes/jeddTheme.dart';
+import './src/screens/index.dart' show UsersList;
 
 void main() => runApp(new MyApp());
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         const Locale('en', 'US'), // English
       ],
       theme: jeddTheme,
-      onGenerateRoute: routes,
+      home: UsersList(),
+      // onGenerateRoute: routes,
     );
   }
 }

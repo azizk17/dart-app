@@ -1,7 +1,7 @@
-import 'package:common/common.dart' show Firebase;
+import 'package:common/common.dart' show UsersService;
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class UsersFirebase extends Firebase {
+class UsersFirebase extends UsersService {
   @override
   createItem(m) {
     // TODO: implement createItem

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
  * 
  * # Colors
  */
+const jeddGreen100 = const Color(0xFF62CDAC);
 const jeddPink50 = const Color(0xFFFEEAE6);
 const jeddPink100 = const Color(0xFFFEDBD0);
 const jeddPink300 = const Color(0xFFFBB8AC);
@@ -23,11 +24,11 @@ ThemeData _buildJeddTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
     accentColor: jeddBrown900,
-    primaryColor: jeddPink100,
-    buttonColor: jeddPink100,
+    primaryColor: jeddGreen100,
+    buttonColor: jeddGreen100,
     scaffoldBackgroundColor: jeddBackgroundWhite,
     cardColor: jeddBackgroundWhite,
-    textSelectionColor: jeddPink100,
+    textSelectionColor: jeddGreen100,
     errorColor: jeddErrorRed,
     // TODO: Add the text themes (103)
     textTheme: _buildJeddTextTheme(base.textTheme),

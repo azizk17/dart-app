@@ -9,18 +9,17 @@ import './screens/groups/group_screen.dart';
 bool isAuth = true;
 bool userIsAuthenticated = false;
 
-Map<String, MaterialPageRoute> guestRoutes = {
-  "/": homeRoute(),
-  "/groups/id": group(),
-  "/settings": settings()
-};
+// Map<String, MaterialPageRoute> guestRoutes = {
+//   "/": homeRoute(),
+//   "/groups/id": group(),
+//   "/settings": settings()
+// };
 
 Route routes(RouteSettings s) {
   /**
    * Guest Routes
    */
-  if (userIsAuthenticated == true) {
-    print("userr auth" + userIsAuthenticated.toString());
+  if (userIsAuthenticated == true /** hard coded for NOW */) {
     switch (s.name) {
       case '/':
         return welcomeRoute();
@@ -107,7 +106,9 @@ MaterialPageRoute homeRoute() {
 // login
 MaterialPageRoute login() {
   return MaterialPageRoute(builder: (context) {
-    return LoginScreen();
+    //! return LoginScreen();
+
+    return null;
   });
 }
 
@@ -136,7 +137,8 @@ MaterialPageRoute settings() {
     builder: (context) {
       // final bloc = StoryProvider.of(context);
       // bloc.fetchItems();
-      return SettingsScreen();
+      //! return SettingsScreen();
+      return null;
     },
     fullscreenDialog: true,
   );

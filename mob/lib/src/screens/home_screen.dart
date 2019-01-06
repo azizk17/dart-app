@@ -59,7 +59,7 @@ class Screen extends StatelessWidget {
         textScaleFactor: 2.3,
       ),
       onPressed: () {
-        bloc.items();
+        // bloc.items();
         Navigator.pushNamed(context, '/me');
       },
     );
