@@ -1,0 +1,49 @@
+{
+  "@@last_modified": "2018-12-17T00:28:26.778535",
+  "title": "العنوان",
+  "@title": {
+    "description": "The application title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hello": "مرحبا",
+  "@hello": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonSend": "ارسال",
+  "@buttonSend": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnCancel": "الغاء",
+  "@btnCancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnSave": "حفظ",
+  "@btnSave": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnRegister": "انشاء حساب",
+  "@btnRegister": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnLogin": "تسجيل الدخول",
+  "@btnLogin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnAgree": "موافق",
+  "@btnAgree": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termsMsg": "اضغط على موافق لقبول سياسه الاستخدام",
+  "@termsMsg": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "@@last_modified": "2018-12-17T00:55:18.409623",
+  "title": "Hello world App",
+  "@title": {
+    "description": "The application title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hello": "Hello",
+  "@hello": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonSend": "Send",
+  "@buttonSend": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnCancel": "Cancel",
+  "@btnCancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnSave": "Save",
+  "@btnSave": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnRegister": "Register",
+  "@btnRegister": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnLogin": "Login",
+  "@btnLogin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "btnAgree": "Agree",
+  "@btnAgree": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termsMsg": "Read our Privacy terms. Tap \"Agree\" to accept the terms of services",
+  "@termsMsg": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

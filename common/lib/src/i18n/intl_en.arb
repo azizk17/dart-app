@@ -1,0 +1,15 @@
+{
+  "@@last_modified": "2018-12-13T02:33:17.033031",
+  "button": "click here",
+  "@button": {
+    "description": "press button",
+    "type": "text",
+    "placeholders": {}
+  },
+  "title": "get the app title",
+  "@title": {
+    "description": "get app title",
+    "type": "text",
+    "placeholders": {}
+  }
+}
