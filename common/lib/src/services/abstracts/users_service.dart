@@ -1,5 +1,7 @@
-import '../../abstracts/service.dart';
+import '../../models/index.dart' show User;
 
-abstract class UsersService extends Service {
+abstract class UsersService {
   fetchItems();
+  fetchItem(String id);
+  update(User data);
 }

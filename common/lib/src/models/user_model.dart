@@ -25,6 +25,11 @@ abstract class User extends Model implements Built<User, UserBuilder> {
   User._();
   factory User([updates(UserBuilder b)]) = _$User;
 
+  Map<String, dynamic> toJson() {
+    return standardSerializers.serialize(this,
+        specifiedType: const FullType(User));
+  }
+
   factory User.parseFirebase(dynamic doc) {
     User docWithoutDocumentID =
         standardSerializers.deserializeWith<User>(User.serializer, doc.data);
@@ -33,7 +38,6 @@ abstract class User extends Model implements Built<User, UserBuilder> {
         docWithoutDocumentID.rebuild((b) => b..id = doc.documentID);
 
     assert(dockWithDocID.id != null);
-
     return dockWithDocID;
   }
 }

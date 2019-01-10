@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:common/common.dart' show UsersBloc, DB, Service;
+import 'package:common/common.dart' show UsersBloc, UsersRepository;
 import '../services/firebase/users_firebase.dart';
-import '../db/index.dart' show UsersDB;
+import '../db/index.dart' show UsersLocalDB;
 // export 'stories_bloc.dart';
 
 class UsersProvider extends InheritedWidget {
   final UsersBloc bloc;
   // static UsersFirebase service = UsersFirebase();
-  static Service _service = UsersFirebase();
-  static DB _db = UsersDB();
+  // ### Inject service and local db to repository
+  static UsersRepository _repo =
+      UsersRepository(service: UsersFirebase(), db: UsersLocalDB());
+  // static UsersDB _db = UsersLocalDB();
 
   UsersProvider({Key key, Widget child})
-      : bloc = UsersBloc(_service, _db),
+      : bloc = UsersBloc(_repo),
         super(key: key, child: child);
 
   bool updateShouldNotify(_) => true;
