@@ -2,6 +2,10 @@ import 'dart:async';
 import './validator.dart';
 
 class UsersValidation {
+  /**
+   *    ! Validation using Streams
+   * 
+   */
   Validator validator = Validator();
   /**
    * 
@@ -15,19 +19,14 @@ class UsersValidation {
     // Handle incoming email data
     handleData: (email, sink) {
       // rules
-      bool isEmpty = Validator.isStringEmpty(email);
       bool maxLenght = Validator.maxLenght(email, 6);
       // bool minLenght = Validator.isStringEmpty(email);
 
-      if (isEmpty) {
+      if (maxLenght) {
         sink.addError("write somthing");
-      } else if (maxLenght) {
-        sink.addError("max 7");
       } else {
         sink.add(email);
       }
-
-      print("$email from validator stream ");
     },
   );
 }

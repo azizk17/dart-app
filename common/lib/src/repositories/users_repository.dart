@@ -42,11 +42,8 @@ class UsersRepository {
    */
   Future<bool> update(User data) {
     // TODO: Validation and Authorization
-    if (Validator.isStringEmpty(data.name))
+    if (Validator.isEmpty(data.name))
       return Future<void>(() {
-        if (data.name.length > 3) {
-          throw new Exception('No joke for you!');
-        }
         return service.update(data);
       });
   }
@@ -55,6 +52,8 @@ class UsersRepository {
    * delete item
    */
   delete(String id) {
+    // TODO: Validation and Authorization
+
     return service.delete(id);
   }
 }

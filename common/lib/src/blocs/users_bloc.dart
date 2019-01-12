@@ -43,16 +43,19 @@ class UsersBloc extends Bloc with UsersValidation {
     //         }).toList());
   }
 
+  // TODO:
   _create(User data) {
     var created = _repo.create(data);
   }
+  // TODO:
 
   _update(User data) {
     var updated = _repo.update(data);
   }
 
+  // TODO:
   _delete(String id) {
-    return _repo.delete(id);
+    var deleted = _repo.delete(id);
   }
 
   _itemOutputsTransformer() {
