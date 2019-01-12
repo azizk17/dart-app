@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:common/common.dart' show UsersBloc, UsersRepository;
 import '../services/firebase/users_firebase.dart';
-import '../db/index.dart' show UsersLocalDB;
+import '../db/db.dart' show UsersLocalDB;
 // export 'stories_bloc.dart';
 
 class UsersProvider extends InheritedWidget {

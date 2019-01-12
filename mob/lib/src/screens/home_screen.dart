@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../providers/users_provider.dart';
-import '../screens/groups/groups_list_screen.dart';
 import 'package:common/common.dart' show UsersBloc, Bloc;
 
 class Home extends StatelessWidget {
@@ -32,7 +31,6 @@ class Screen extends StatelessWidget {
           _create_Button(context),
         ],
       ),
-      body: GroupsListScreen(),
     );
   }
 

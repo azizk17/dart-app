@@ -1,7 +1,11 @@
-import '../../models/index.dart' show User;
+import '../../models/models.dart' show User;
+import 'dart:async';
 
-abstract class UsersService {
+abstract class UsersService<User> {
+  // TODO: return type
   fetchItems();
   fetchItem(String id);
-  update(User data);
+  Future<User> create(User data);
+  Future<void> update(User data);
+  Future<void> delete(String id);
 }

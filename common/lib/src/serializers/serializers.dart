@@ -6,7 +6,7 @@ library serializers;
 
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
-import 'package:common/src/models/index.dart';
+import 'package:common/src/models/models.dart';
 
 part 'serializers.g.dart';
 
@@ -23,8 +23,6 @@ part 'serializers.g.dart';
 /// You usually only need to do this once per project.
 @SerializersFor(const [
   User,
-  Settings,
-  Group,
 ])
 final Serializers serializers = _$serializers;
 

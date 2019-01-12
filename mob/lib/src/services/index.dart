@@ -1,1 +1,0 @@
-export './firebase/index.dart';

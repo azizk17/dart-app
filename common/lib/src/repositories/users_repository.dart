@@ -1,7 +1,9 @@
 import 'package:meta/meta.dart';
-import '../services/abstracts/index.dart' show UsersService;
-import '../db/index.dart' show UsersDB;
-import '../models/index.dart' show User;
+import 'dart:async';
+import '../services/abstracts/abstracts.dart' show UsersService;
+import '../db/db.dart' show UsersDB;
+import '../models/models.dart' show User;
+import '../validations/validator.dart';
 
 class UsersRepository {
   final UsersService service;
@@ -10,16 +12,42 @@ class UsersRepository {
     @required this.service,
     @required this.db,
   });
-  getItems() {
-    // do smoe logic here
+  /**
+   *  get a collection - this function has a service call which shoud retrun a Stream or Future
+   * 
+   */
+  Stream<dynamic> getItems({offset: int}) {
+    // TODO: DB query - if items exist in local db, no need to perform a service call
     return service.fetchItems();
   }
 
-  getItem(String id) {
+  /**
+   *  get a single item - this function has a service call which shoud retrun a Stream or Future
+   */
+  Stream<dynamic> getItem(String id) {
+    // TODO: DB query - if item exist in local db, no need to perform a service call
     return service.fetchItem(id);
   }
 
-  update(User data) {
-    return service.update(data);
+  /**
+   * create 
+   */
+  Future<User> create(User data) {
+    // TODO:  validation and Authorization
+    return service.create(data);
+  }
+
+  /**
+   *  update a single item
+   */
+  Future<bool> update(User data) {
+    // TODO: Validation and Authorization
+    if (Validator.isStringEmpty(data.name))
+      return Future<void>(() {
+        if (data.name.length > 3) {
+          throw new Exception('No joke for you!');
+        }
+        return service.update(data);
+      });
   }
 }

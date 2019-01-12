@@ -5,7 +5,10 @@ class Validator {
    */
 
   static bool isStringEmpty(String value) {
-    return value.isEmpty;
+    if (!value.isEmpty) {
+      throw Exception("no data");
+    }
+    return true;
   }
 
   static bool required(inputValue) {

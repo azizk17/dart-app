@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../providers/index.dart' show UsersProvider;
+import '../providers/providers.dart' show UsersProvider;
 import 'package:common/common.dart' show User, UsersBloc;
 
 /***
  * 
- *  !This screen for testing and development illustration ONLY
+ *  ! # This screen for testing and development illustration ONLY
  * 
  */
 class UsersList extends StatelessWidget {
@@ -108,8 +108,9 @@ class InfoScreen extends StatelessWidget {
   }
 
   Widget _buildInfo(BuildContext context) {
+    this.bloc.getItemById(this.id);
     return StreamBuilder(
-      stream: this.bloc.getItemById(this.id),
+      stream: this.bloc.item,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (!snapshot.hasData) {
           return Center(
@@ -131,7 +132,8 @@ class InfoScreen extends StatelessWidget {
                 snapshot.data.email,
                 textScaleFactor: 2.2,
               ),
-              _submit(bloc)
+              _submit(bloc),
+              Text(this._updateUser.toString()),
             ],
           ),
         );
@@ -139,24 +141,29 @@ class InfoScreen extends StatelessWidget {
     );
   }
 
+  User _updateUser = User();
   Widget _editName(UsersBloc bloc, {String id}) {
     return StreamBuilder(
-        stream: bloc.name,
+        stream: bloc.updatedItem,
+        initialData: _updateUser,
         builder: (context, snapshot) {
           return TextField(
             decoration: InputDecoration(
               labelText: "enter a new name",
               errorText: snapshot.error,
+              hintText: snapshot.data?.name,
             ),
-            onChanged: bloc.changeName(id),
+            onChanged: (val) => this._updateUser =
+                this._updateUser.rebuild((b) => b..name = val),
           );
         });
   }
 
   Widget _submit(UsersBloc bloc) {
+    print("upadted user objec + " + this._updateUser.toString());
     return FlatButton(
       child: Text("Save"),
-      onPressed: () => bloc.changeName,
+      onPressed: () => bloc.update(this._updateUser),
     );
   }
 }

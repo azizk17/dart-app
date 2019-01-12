@@ -1,4 +1,4 @@
-import '../abstracts/index.dart';
+import '../abstracts/abstracts.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
