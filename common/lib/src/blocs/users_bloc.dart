@@ -14,7 +14,7 @@ class UsersBloc extends Bloc with UsersValidation {
   final _updateItem = BehaviorSubject<User>();
 
 //  * Getters to Streams
-  Observable<Map<String, User>> get items => _repo.getItems();
+  Observable<Map<String, User>> get items => _itemsOutputs;
   Observable<User> get item => _itemOutput.stream;
   Observable<User> get updatedItem => _updateItem.stream;
   // single input validation
@@ -22,15 +22,18 @@ class UsersBloc extends Bloc with UsersValidation {
 // * Getters to Sinks
   Function(String) get getItemById => _getItemById;
   Function(String) get fetchItems => _getItems;
+  Function(User) get create => _create;
   Function(User) get update => _update;
+  Function(String) get remove => _delete;
 
   UsersBloc(this._repo);
-  @override
+  // should output a stream type User, which StreamBuilder widget listen to.
   _getItemById(String id) {
     var item = _repo.getItem(id);
     item.listen((doc) => _itemOutput.sink.add(User.parseFirebase(doc)));
   }
 
+  // should output a stream type Map<string, User> , which StreamBuilder widget listen to.
   _getItems(String offset) {
     var items = _repo.getItems();
     // List<User> recived =
@@ -40,8 +43,16 @@ class UsersBloc extends Bloc with UsersValidation {
     //         }).toList());
   }
 
+  _create(User data) {
+    var created = _repo.create(data);
+  }
+
   _update(User data) {
     var updated = _repo.update(data);
+  }
+
+  _delete(String id) {
+    return _repo.delete(id);
   }
 
   _itemOutputsTransformer() {

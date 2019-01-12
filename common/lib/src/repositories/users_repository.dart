@@ -50,4 +50,11 @@ class UsersRepository {
         return service.update(data);
       });
   }
+
+  /**
+   * delete item
+   */
+  delete(String id) {
+    return service.delete(id);
+  }
 }

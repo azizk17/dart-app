@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 // import './src/routes.dart';
 import './src/locale.dart';
 import './src/themes/jeddTheme.dart';
-import './src/screens/screens.dart' show UsersList;
+import './src/screens/screens.dart' show Home;
 
 void main() => runApp(new MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: Locale('ar', ''),
+      locale: Locale('en', ''),
       localizationsDelegates: [
         const AppLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         const Locale('en', 'US'), // English
       ],
       theme: jeddTheme,
-      home: UsersList(),
+      home: Home(),
       // onGenerateRoute: routes,
     );
   }

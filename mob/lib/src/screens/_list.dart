@@ -19,12 +19,15 @@ class UsersList extends StatelessWidget {
 class BuildUsersList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: _screen(context),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Testing Screen"),
+      ),
+      body: _body(context),
     );
   }
 
-  Widget _screen(BuildContext context) {
+  Widget _body(BuildContext context) {
     print("Here has no Stream");
     return Scaffold(
       appBar: AppBar(
