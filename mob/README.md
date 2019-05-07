@@ -1,8 +1,4 @@
 # mob
 
-A new Flutter project.
+## A Flutter Mobile Application implemented Firebase Service
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
