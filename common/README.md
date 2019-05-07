@@ -1,3 +1,7 @@
-# Shared code with diiferent paltform Flutter, AngluarDart
- - Flutter is implemented for now 
+# Shared code ( Flutter, AngluarDart )
+
+- Businsess Logic (BLOC) 
+- Reactive Programming (RXDART)
+- Localization 
+- Built Value & Serlization
 
